@@ -1,0 +1,36 @@
+setTimeout(() => { heart.remove(); }, 4000);
+            }
+        }
+
+        // Функция для создания лепестков роз
+        function createPetals() {
+            for (let i = 0; i < 15; i++) {
+                let petal = document.createElement("div");
+                petal.classList.add("petal");
+                document.body.appendChild(petal);
+
+                let x = Math.random() * window.innerWidth;
+                let duration = Math.random() * 5 + 5;
+
+                petal.style.left = x + "px";
+                petal.style.animationDuration = duration + "s";
+                petal.style.animationDelay = Math.random() * 5 + "s";
+
+                setTimeout(() => { petal.remove(); }, duration * 1000);
+            }
+        }
+
+        setInterval(createPetals, 2000);
+
+        // Функция для управления музыкой
+        let music = document.getElementById("backgroundMusic");
+        function toggleMusic() {
+            if (music.paused) {
+                music.play();
+            } else {
+                music.pause();
+            }
+        }
+    </script>
+</body>
+</html>
